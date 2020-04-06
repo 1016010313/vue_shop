@@ -5,9 +5,14 @@ import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import './css/global.css'
+import axios from 'axios'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)
+// 配置请求的根路径
+axios.defaults.baseURL = 'http://timemeetyou.com:8889/api/private/v1/'
+Vue.prototype.$http = axios
 
 /* eslint-disable no-new */
 new Vue({
